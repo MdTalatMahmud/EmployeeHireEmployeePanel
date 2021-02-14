@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Mates Apply Jobs</string>
+    <string-array name="jobAdvArray">
+        <item>Company name 1</item>
+        <item>Company name 2</item>
+        <item>Company name 3</item>
+        <item>Company name 4</item>
+        <item>Company name 5</item>
+        <item>Company name 6</item>
+        <item>Company name 7</item>
+        <item>Company name 8</item>
+        <item>Company name 9</item>
+        <item>Company name 10</item>
+    </string-array>
+
+</resources>
