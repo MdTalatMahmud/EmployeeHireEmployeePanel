@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".LocationActivity">
+
+    <CheckBox
+        android:id="@+id/nswCheckBoxID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NSW"/>
+    <CheckBox
+        android:id="@+id/queenslandCheckBoxID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Queensland"/>
+    <CheckBox
+        android:id="@+id/northernTerritoryCheckBoxID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Northern Territory"/>
+    <CheckBox
+        android:id="@+id/westernAustraliaCheckBoxID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Western Australia"/>
+    <CheckBox
+        android:id="@+id/southAustraliaCheckBoxID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="South Australia"/>
+    <CheckBox
+        android:id="@+id/victoriaCheckBoxID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Victoria"/>
+    <CheckBox
+        android:id="@+id/australianCapitalTerritoryCheckBoxID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Australian Capital Territory"/>
+    <CheckBox
+        android:id="@+id/tasmaniaCheckBoxID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tasmania"/>
+
+    <Button
+        android:id="@+id/nextButtonLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"/>
+</LinearLayout>
