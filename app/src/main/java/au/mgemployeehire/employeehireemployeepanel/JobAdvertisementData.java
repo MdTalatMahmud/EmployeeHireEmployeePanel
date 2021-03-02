@@ -32,12 +32,14 @@ public class JobAdvertisementData {
     private String licenseRequiredStr;
     private String awardStr;
 
+    private String keyStr;
+
     public JobAdvertisementData(){
         //default constructor
     }
 
     //create constructor
-    public JobAdvertisementData(String companyNameStr, String jobPositionStr, String workerQuantityStr) {
+    public JobAdvertisementData(String companyNameStr, String jobPositionStr, String workerQuantityStr, String keyStr) {
         this.companyNameStr = companyNameStr;
         this.streetStr = streetStr;
         this.suburbStr = suburbStr;
@@ -67,6 +69,8 @@ public class JobAdvertisementData {
         this.environmentStr = environmentStr;
         this.licenseRequiredStr = licenseRequiredStr;
         this.awardStr = awardStr;
+
+        this.keyStr = keyStr;
     }
 
     //getter setter
@@ -303,4 +307,11 @@ public class JobAdvertisementData {
         this.awardStr = awardStr;
     }
 
+    public String getKeyStr() {
+        return keyStr;
+    }
+
+    public void setKeyStr(String keyStr) {
+        this.keyStr = keyStr;
+    }
 }
