@@ -2,6 +2,8 @@ package au.mgemployeehire.employeehireemployeepanel;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,10 +37,22 @@ public class JobListAdapter extends ArrayAdapter<JobAdvertisementData> {
         TextView companyName = view.findViewById(R.id.companyNameID);
         TextView vacancy = view.findViewById(R.id.vacancyID);
         TextView jobPosition = view.findViewById(R.id.jobPositionID);
+        TextView keyStr = view.findViewById(R.id.getKeyStrID);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppConstant.keyStr = jobAdvertisementData.getKeyStr();
+                Log.e("keyStr",""+jobAdvertisementData.getKeyStr());
+                Intent intent = new Intent(context, JobDetailsActivity.class);
+                context.startActivity(intent);
+            }
+        });
 
         companyName.setText(jobAdvertisementData.getCompanyNameStr());
         vacancy.setText(jobAdvertisementData.getWorkerQuantityStr());
         jobPosition.setText(jobAdvertisementData.getJobPositionStr());
+        keyStr.setText(jobAdvertisementData.getKeyStr());
 
         return view;
     }
