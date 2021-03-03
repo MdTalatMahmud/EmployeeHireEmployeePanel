@@ -422,7 +422,6 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
-                android:visibility="gone"
                 android:text="Male/Female: "/>
             <TextView
                 android:id="@+id/maleFemaleTVID"
@@ -430,7 +429,6 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:visibility="gone"
                 android:text="Male"/>
         </LinearLayout>
 

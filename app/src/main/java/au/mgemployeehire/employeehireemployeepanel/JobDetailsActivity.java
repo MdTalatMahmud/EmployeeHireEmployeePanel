@@ -20,7 +20,8 @@ public class JobDetailsActivity extends AppCompatActivity {
     private TextView companyNameTextView, companyStreetTextView, companySuburbTextView, companyStateTextView, awardTextView, contactPersonNameTextView,
             contactPersonEmailTextView, contactPhoneNumberTextView, supervisorNameTextView, supervisorMobileNumberTextView, workingDivisionTextView,
             workStreetTextView, workSuburbTextView, workStateTextView, fromDateTextView, toDateTextView, fromTimeTextView, toTimeTextView, genderTextView,
-            jobPositionTextView, workerQuantityTextView, jobTypeTextView, jobDescriptionTextView, ppeRequirementTextView, transportRequirementTextView;
+            jobPositionTextView, workerQuantityTextView, jobTypeTextView, jobDescriptionTextView, ppeRequirementTextView, transportRequirementTextView,
+            englishRequirementsTextView, liftingCapacityTextView, environmentTextView, licenseRequirementTextView;
     private Button applybutton;
     private DatabaseReference databaseReference;
 
@@ -51,13 +52,17 @@ public class JobDetailsActivity extends AppCompatActivity {
         toDateTextView = findViewById(R.id.toDateTVID);
         fromTimeTextView = findViewById(R.id.fromTimeTVID);
         toTimeTextView = findViewById(R.id.toTimeTVID);
-        //genderTextView = findViewById(R.id.genderTVID);
+        genderTextView = findViewById(R.id.maleFemaleTVID);
         jobPositionTextView = findViewById(R.id.jobPositionTVID);
         workerQuantityTextView = findViewById(R.id.numberOfStaffTVID);
         jobTypeTextView = findViewById(R.id.jobTypeTVID);
         jobDescriptionTextView = findViewById(R.id.jobDescriptionTVID);
         ppeRequirementTextView = findViewById(R.id.ppeRequirementsTVID);
         transportRequirementTextView = findViewById(R.id.transportRequirementsTVID);
+        englishRequirementsTextView = findViewById(R.id.engRequirementTVID);
+        liftingCapacityTextView = findViewById(R.id.liftingCapacityTVID);
+        environmentTextView = findViewById(R.id.temparatureTVID);
+        licenseRequirementTextView = findViewById(R.id.licenseRequiredTVID);
 
         applybutton = findViewById(R.id.jobApplyBtnID);
 
@@ -88,13 +93,17 @@ public class JobDetailsActivity extends AppCompatActivity {
                 String toDate = snapshot.child("toDateStr").getValue().toString();
                 String fromTime = snapshot.child("startTimeStr").getValue().toString();
                 String toTime = snapshot.child("endTimeStr").getValue().toString();
-                //String gender = snapshot.child("endTimeStr").getValue().toString();//here is a mistake
+                String gender = snapshot.child("maleFemaleStr").getValue().toString();//here is a mistake
                 String jobPosition = snapshot.child("jobPositionStr").getValue().toString();
                 String workerQuantity = snapshot.child("workerQuantityStr").getValue().toString();
                 String jobType = snapshot.child("jobTypeStr").getValue().toString();
                 String jobDescription = snapshot.child("jobDescriptionStr").getValue().toString();
                 String ppe = snapshot.child("ppeStr").getValue().toString();
                 String transportRequirement = snapshot.child("transportRequirementsStr").getValue().toString();
+                String englishRequirement = snapshot.child("engRequirementStr").getValue().toString();
+                String liftingCapacity = snapshot.child("liftingCapacityStr").getValue().toString();
+                String environment = snapshot.child("environmentStr").getValue().toString();
+                String licenseRequirement = snapshot.child("licenseRequiredStr").getValue().toString();
 
                 //setting data to textView
                 companyNameTextView.setText(companyName);
@@ -115,13 +124,17 @@ public class JobDetailsActivity extends AppCompatActivity {
                 toDateTextView.setText(toDate);
                 fromTimeTextView.setText(fromTime);
                 toTimeTextView.setText(toTime);
-                //genderTextView.setText(gender);
+                genderTextView.setText(gender);
                 jobPositionTextView.setText(jobPosition);
                 workerQuantityTextView.setText(workerQuantity);
                 jobTypeTextView.setText(jobType);
                 jobDescriptionTextView.setText(jobDescription);
                 ppeRequirementTextView.setText(ppe);
                 transportRequirementTextView.setText(transportRequirement);
+                englishRequirementsTextView.setText(englishRequirement);
+                liftingCapacityTextView.setText(liftingCapacity);
+                environmentTextView.setText(environment);
+                licenseRequirementTextView.setText(licenseRequirement);
 
             }
 
