@@ -1,27 +1,690 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:background="#FFFFFF"
     tools:context=".JobDetailsActivity">
-
-    <TextView
-        android:id="@+id/keyTExtID"
-        android:layout_width="wrap_content"
+    <!--    android:background="#FFEB3B"-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="Job Details"/>
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#00BCD4"
+            android:layout_gravity="center_horizontal"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Job Details"/>
+
+
+        <!--    Job Advertisement ID-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Job Advertisement ID: "/>
+            <TextView
+                android:id="@+id/keyTExtID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Mx12..."/>
+        </LinearLayout>
+
+        <!--        .......company name........-->
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Company Name: "/>
+            <TextView
+                android:id="@+id/conpanyNameTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="company name"/>
+        </LinearLayout>
+
+        <!--        company Location/company address-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#00BCD4"
+            android:textStyle="bold"
+            android:text="Company Address: "/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Street: "/>
+            <TextView
+                android:id="@+id/streetTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="street"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Suburb: "/>
+            <TextView
+                android:id="@+id/suburbTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="suburb"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="State: "/>
+            <TextView
+                android:id="@+id/stateTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="state"/>
+        </LinearLayout>
+
+        <!--       AWARD-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Industry AWARD (Optional): "/>
+            <TextView
+                android:id="@+id/industryAwardTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="AWARD"/>
+        </LinearLayout>
+
+        <!--       your name/Contact Person Name-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Contact Person Name: "/>
+            <TextView
+                android:id="@+id/contactPersonNameTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="your name"/>
+        </LinearLayout>
+
+        <!--       your email-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Email: "/>
+            <TextView
+                android:id="@+id/contactPersonEmailTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="xyz@gmail.com"/>
+        </LinearLayout>
+
+        <!--       your mobile no/contact phone number-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Contact Phone Number: "/>
+            <TextView
+                android:id="@+id/contactPhoneNoTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="+61 234567"/>
+        </LinearLayout>
+
+        <!--        person to meet/ supervisor name-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Site Supervisor/Manager Name: "/>
+            <TextView
+                android:id="@+id/supervisorNameTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Mr. John"/>
+        </LinearLayout>
+
+        <!--     Site Supervisor/Manager phone no-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Site Supervisor/Manager Mobile Number: "/>
+            <TextView
+                android:id="@+id/siteSupervisorMobileNoTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="+61 111111"/>
+        </LinearLayout>
+
+        <!--     division/section/department-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Division/Section/Department: "/>
+            <TextView
+                android:id="@+id/departmentTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text=""/>
+        </LinearLayout>
+
+        <!--       work site Location-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#00BCD4"
+            android:textStyle="bold"
+            android:text="Work site Location: (Optional)"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Street: "/>
+            <TextView
+                android:id="@+id/worksiteStreetTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="street"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Suburb: "/>
+            <TextView
+                android:id="@+id/worksiteSuburbTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="suburb"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="State: "/>
+            <TextView
+                android:id="@+id/worksiteStateTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="state"/>
+        </LinearLayout>
+
+        <!--       hiring date fixing-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#00BCD4"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Time Duration: "/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="From Date: "/>
+            <TextView
+                android:id="@+id/fromDateTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="1/1/2021"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="To Date: "/>
+            <TextView
+                android:id="@+id/toDateTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="1/1/2021"/>
+        </LinearLayout>
+
+        <!--        Time table-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Start Time: "/>
+            <TextView
+                android:id="@+id/fromTimeTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Start Time"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="End Time: "/>
+            <TextView
+                android:id="@+id/toTimeTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="End Time"/>
+        </LinearLayout>
+
+        <!--        .......male/female ........-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Male/Female: "/>
+            <TextView
+                android:id="@+id/maleFemaleTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Male"/>
+        </LinearLayout>
+
+        <!--        .......job position ........-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Job position: "/>
+            <TextView
+                android:id="@+id/jobPositionTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Forklift driver"/>
+        </LinearLayout>
+
+        <!--        quantity-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Number of Staff: "/>
+            <TextView
+                android:id="@+id/numberOfStaffTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text=""/>
+        </LinearLayout>
+
+        <!--        job type-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Job Type: "/>
+            <TextView
+                android:id="@+id/jobTypeTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Casual"/>
+        </LinearLayout>
+
+        <!--        job description-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#00BCD4"
+            android:textStyle="bold"
+            android:text="Job Description: "/>
+        <TextView
+            android:id="@+id/jobDescriptionTVID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Job Description Job Description Job Description"/>
+
+        <!--        PPE-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="PPE Requirements: "/>
+            <TextView
+                android:id="@+id/ppeRequirementsTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="goggles"/>
+        </LinearLayout>
+
+        <!--        transport-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Transport requirements: "/>
+            <TextView
+                android:id="@+id/transportRequirementsTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Required"/>
+        </LinearLayout>
+
+        <!--        English requirements-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="English requirements: "/>
+            <TextView
+                android:id="@+id/engRequirementTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="fluent"/>
+        </LinearLayout>
+
+        <!--        Lifting capacity-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Lifting capacity: "/>
+            <TextView
+                android:id="@+id/liftingCapacityTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="5-10 Kg"/>
+        </LinearLayout>
+
+        <!--        additional requirement-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Additional requirements: "/>
+            <TextView
+                android:id="@+id/additionalRequirementTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="RF Scanner"/>
+        </LinearLayout>
+
+        <!--        temperature-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Environment: "/>
+            <TextView
+                android:id="@+id/temparatureTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Normal"/>
+        </LinearLayout>
+
+        <!--        License required-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="License required: "/>
+            <TextView
+                android:id="@+id/licenseRequiredTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text=""/>
+        </LinearLayout>
 
 
 
-    <Button
-        android:id="@+id/jobApplyBtnID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Apply"/>
+        <!--        Two buttons-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/backSubmissionPageBtnID"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                app:backgroundTint="#00BCD4" />
+
+            <Button
+                android:id="@+id/jobApplyBtnID"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:layout_marginLeft="5dp"
+                app:backgroundTint="#00BCD4" />
+        </LinearLayout>
 
 
-</LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>
