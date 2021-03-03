@@ -43,7 +43,7 @@ public class JobListAdapter extends ArrayAdapter<JobAdvertisementData> {
             @Override
             public void onClick(View v) {
                 AppConstant.keyStr = jobAdvertisementData.getKeyStr();
-                Log.e("keyStr",""+jobAdvertisementData.getKeyStr());
+                //Log.e("keyStr",""+jobAdvertisementData.getKeyStr());
                 Intent intent = new Intent(context, JobDetailsActivity.class);
                 context.startActivity(intent);
             }
