@@ -3,11 +3,15 @@ package au.mgemployeehire.employeehireemployeepanel;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +26,7 @@ public class JobDetailsActivity extends AppCompatActivity {
             workStreetTextView, workSuburbTextView, workStateTextView, fromDateTextView, toDateTextView, fromTimeTextView, toTimeTextView, genderTextView,
             jobPositionTextView, workerQuantityTextView, jobTypeTextView, jobDescriptionTextView, ppeRequirementTextView, transportRequirementTextView,
             englishRequirementsTextView, liftingCapacityTextView, environmentTextView, licenseRequirementTextView;
-    private Button applybutton;
+    private Button applybutton, backButton;
     private DatabaseReference databaseReference;
 
 
@@ -52,7 +56,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         toDateTextView = findViewById(R.id.toDateTVID);
         fromTimeTextView = findViewById(R.id.fromTimeTVID);
         toTimeTextView = findViewById(R.id.toTimeTVID);
-        genderTextView = findViewById(R.id.maleFemaleTVID);
+        genderTextView = findViewById(R.id.maleFemaleTVID);//problem here!
         jobPositionTextView = findViewById(R.id.jobPositionTVID);
         workerQuantityTextView = findViewById(R.id.numberOfStaffTVID);
         jobTypeTextView = findViewById(R.id.jobTypeTVID);
@@ -65,6 +69,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         licenseRequirementTextView = findViewById(R.id.licenseRequiredTVID);
 
         applybutton = findViewById(R.id.jobApplyBtnID);
+        backButton = findViewById(R.id.backBtnID);
 
         keyTextView.setText(AppConstant.keyStr);
         String key = keyTextView.getText().toString();
@@ -124,7 +129,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                 toDateTextView.setText(toDate);
                 fromTimeTextView.setText(fromTime);
                 toTimeTextView.setText(toTime);
-                genderTextView.setText(gender);
+                genderTextView.setText(gender); //gotta bug here!
                 jobPositionTextView.setText(jobPosition);
                 workerQuantityTextView.setText(workerQuantity);
                 jobTypeTextView.setText(jobType);
@@ -144,22 +149,29 @@ public class JobDetailsActivity extends AppCompatActivity {
             }
         });
 
+        //back button functioning
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JobDetailsActivity.super.onBackPressed();
+            }
+        });
+
         applybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                databaseReference = FirebaseDatabase.getInstance().getReference().child("JobAdvertisementInfo").child(a);
-//                databaseReference.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        String companyName = snapshot.child("companyNameStr").getValue().toString();
-//                        companyNameTextView.setText(companyName);
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String userEmail = user.getEmail();
+
+                //communicating database..sending apply information to database
+                DatabaseReference dr;
+                dr = FirebaseDatabase.getInstance().getReference().child("jobApplyRecords");
+                String uniqueKey = dr.push().getKey();//generating uniqueKey
+                dr.child(key).child(uniqueKey).setValue(userEmail);
+                Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(JobDetailsActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
