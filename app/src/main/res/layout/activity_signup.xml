@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/signupbackground"
+    tools:context=".SignupActivity">
+
+    <EditText
+        android:id="@+id/signupEmailID"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="#E0F8B2"
+        android:layout_marginBottom="5dp"
+        android:hint="Email"/>
+    <EditText
+        android:id="@+id/signupPasswordID"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="#E0F8B2"
+        android:inputType="textPassword"
+        android:layout_marginBottom="5dp"
+        android:hint="Password"/>
+
+    <Button
+        android:id="@+id/signupBtnID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Sign up"/>
+
+    <TextView
+        android:id="@+id/gotoSignInTVID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:text="Already have an account? Sign in"/>
+    <ProgressBar
+        android:id="@+id/signinProgressBarID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+</LinearLayout>
