@@ -167,7 +167,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                 DatabaseReference dr;
                 dr = FirebaseDatabase.getInstance().getReference().child("jobApplyRecords");
                 String uniqueKey = dr.push().getKey();//generating uniqueKey
-                dr.child(key).child(uniqueKey).setValue(userEmail);
+                dr.child(key).child(uniqueKey).child("email").setValue(userEmail);
                 Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(JobDetailsActivity.this, MainActivity.class);
