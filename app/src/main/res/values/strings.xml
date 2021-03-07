@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Express Labour Hire</string>
+    <string name="app_name">Express Job Hunt</string>
     <string-array name="jobAdvArray">
         <item>Warehouse quantity 2</item>
         <item>Pick Packer quantity 5</item>
