@@ -56,6 +56,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Company Name: "/>
             <TextView
                 android:id="@+id/conpanyNameTVID"
@@ -63,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="company name"/>
         </LinearLayout>
 
@@ -73,6 +75,7 @@
             android:textSize="20dp"
             android:textColor="#00BCD4"
             android:textStyle="bold"
+            android:visibility="gone"
             android:text="Company Address: "/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -81,6 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="Street: "/>
             <TextView
                 android:id="@+id/streetTVID"
@@ -88,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="street"/>
         </LinearLayout>
         <LinearLayout
@@ -97,6 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="Suburb: "/>
             <TextView
                 android:id="@+id/suburbTVID"
@@ -104,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="suburb"/>
         </LinearLayout>
         <LinearLayout
@@ -113,6 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="State: "/>
             <TextView
                 android:id="@+id/stateTVID"
@@ -120,6 +128,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="state"/>
         </LinearLayout>
 
@@ -134,6 +143,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Industry AWARD (Optional): "/>
             <TextView
                 android:id="@+id/industryAwardTVID"
@@ -141,6 +151,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="AWARD"/>
         </LinearLayout>
 
@@ -155,6 +166,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Contact Person Name: "/>
             <TextView
                 android:id="@+id/contactPersonNameTVID"
@@ -162,6 +174,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="your name"/>
         </LinearLayout>
 
@@ -175,6 +188,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Email: "/>
             <TextView
                 android:id="@+id/contactPersonEmailTVID"
@@ -182,6 +196,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="xyz@gmail.com"/>
         </LinearLayout>
 
@@ -196,6 +211,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Contact Phone Number: "/>
             <TextView
                 android:id="@+id/contactPhoneNoTVID"
@@ -203,6 +219,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="+61 234567"/>
         </LinearLayout>
 
@@ -217,6 +234,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Site Supervisor/Manager Name: "/>
             <TextView
                 android:id="@+id/supervisorNameTVID"
@@ -224,6 +242,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Mr. John"/>
         </LinearLayout>
 
@@ -238,6 +257,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Site Supervisor/Manager Mobile Number: "/>
             <TextView
                 android:id="@+id/siteSupervisorMobileNoTVID"
@@ -245,7 +265,29 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="+61 111111"/>
+        </LinearLayout>
+
+        <!--        .......job position ........-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Job position: "/>
+            <TextView
+                android:id="@+id/jobPositionTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Forklift driver"/>
         </LinearLayout>
 
         <!--     division/section/department-->
@@ -259,7 +301,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
-                android:text="Division/Section/Department: "/>
+                android:text="Department/Section/Shed: "/>
             <TextView
                 android:id="@+id/departmentTVID"
                 android:layout_width="wrap_content"
@@ -432,26 +474,7 @@
                 android:text="Any"/>
         </LinearLayout>
 
-        <!--        .......job position ........-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textColor="#00BCD4"
-                android:textStyle="bold"
-                android:text="Job position: "/>
-            <TextView
-                android:id="@+id/jobPositionTVID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="Forklift driver"/>
-        </LinearLayout>
+
 
         <!--        quantity-->
         <LinearLayout
@@ -652,7 +675,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text=""/>
+                android:text="N/A"/>
         </LinearLayout>
 
 

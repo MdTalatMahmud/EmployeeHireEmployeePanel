@@ -10,6 +10,14 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/setMyContactDetailsBtnID"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:backgroundTint="#4CAF50"
+        android:textStyle="bold"
+        android:text="Set Contact Details"/>
+
+    <Button
         android:id="@+id/jobAdvBtnID"
         android:layout_width="300dp"
         android:layout_height="wrap_content"

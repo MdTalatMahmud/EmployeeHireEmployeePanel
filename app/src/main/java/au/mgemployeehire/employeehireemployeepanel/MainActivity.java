@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button jobAdvButton, appliedJobsButton;
+    private Button jobAdvButton, appliedJobsButton, setMyContactDetailsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +24,17 @@ public class MainActivity extends AppCompatActivity {
         //finding id
         jobAdvButton = findViewById(R.id.jobAdvBtnID);
         appliedJobsButton = findViewById(R.id.appliedJobsBtnID);
+        setMyContactDetailsButton = findViewById(R.id.setMyContactDetailsBtnID);
 
         //button functioning
+        setMyContactDetailsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SetMyContactDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         jobAdvButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
