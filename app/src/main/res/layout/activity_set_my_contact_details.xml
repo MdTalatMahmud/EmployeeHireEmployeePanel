@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".SetMyContactDetailsActivity">
 
 <!--    staff name-->
@@ -57,6 +58,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="David Cris"/>
+    </LinearLayout>
+
+    <!--    email-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Experience: "/>
+        <EditText
+            android:id="@+id/applicantExperienceID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="1 year experience of Forklifting. 2 year experience of Truck driving."/>
+    </LinearLayout>
+
+    <!--    License-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="License: "/>
+        <EditText
+            android:id="@+id/applicantLicenseID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="(1) White card, (2)Driving License"/>
     </LinearLayout>
 
     <Button

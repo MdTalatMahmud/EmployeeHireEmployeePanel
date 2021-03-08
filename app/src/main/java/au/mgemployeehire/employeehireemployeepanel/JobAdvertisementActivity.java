@@ -29,13 +29,20 @@ public class JobAdvertisementActivity extends AppCompatActivity {
     private JobListAdapter jobListAdapter;
     private FirebaseDatabase mDatabase;
     private TextView keyTextView;
+    public static String jobPosStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_advertisement);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("JobAdvertisementInfo");
+        //catching job position
+        Bundle jobPosition = getIntent().getExtras();
+        if (jobPosition!=null){
+            jobPosStr = jobPosition.getString("jobPosition");
+        }
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("JobAdvertisementInfo").child(jobPosStr);
         jobAdvertisementDataList = new ArrayList<>();
 
         jobListAdapter = new JobListAdapter(JobAdvertisementActivity.this, jobAdvertisementDataList);

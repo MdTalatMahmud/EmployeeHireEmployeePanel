@@ -4,12 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/jobhuntlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/jobhuntlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeHireEmployeePanel">
-        <activity android:name=".SetMyContactDetailsActivity"></activity>
+        <activity android:name=".JobPositionSelectionActivity"></activity>
+        <activity android:name=".SetMyContactDetailsActivity" />
         <activity android:name=".SigninActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity"></activity>
+        <activity android:name=".SignupActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".WhatKindsOfJobsActivity" />
         <activity android:name=".PartOrFullTimeJobActivity" />

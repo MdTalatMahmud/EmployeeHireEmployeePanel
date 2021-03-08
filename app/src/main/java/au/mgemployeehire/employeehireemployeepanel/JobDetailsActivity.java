@@ -75,7 +75,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         String key = keyTextView.getText().toString();
 
         //getting data from database
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("JobAdvertisementInfo").child(key);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("JobAdvertisementInfo").child(JobAdvertisementActivity.jobPosStr).child(key);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -160,18 +160,63 @@ public class JobDetailsActivity extends AppCompatActivity {
         applybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //finding email that is used for sign in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 String userEmail = user.getEmail();
 
-                //communicating database..sending apply information to database
-                DatabaseReference dr;
-                dr = FirebaseDatabase.getInstance().getReference().child("jobApplyRecords");
-                String uniqueKey = dr.push().getKey();//generating uniqueKey
-                dr.child(key).child(uniqueKey).child("email").setValue(userEmail);
-                Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
+                //getting user email UID
+                String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                //retrieving info of applicant
+                DatabaseReference databaseReference2 = FirebaseDatabase.getInstance().getReference().child("applicantDetails").child(user_id);
 
-                Intent intent = new Intent(JobDetailsActivity.this, MainActivity.class);
-                startActivity(intent);
+                databaseReference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        try {
+                            String applicantName = snapshot.child("applicantName").getValue().toString();
+                            String applicantContactNumber = snapshot.child("applicantContactNumber").getValue().toString();
+                            String applicantEmail = snapshot.child("applicantEmail").getValue().toString();
+                            String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
+                            String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
+
+                            //communicating database..sending apply information to database
+                            DatabaseReference dr;
+                            dr = FirebaseDatabase.getInstance().getReference().child("jobApplyRecords");
+                            String uniqueKey = dr.push().getKey();//generating uniqueKey
+                            dr.child(key).child(uniqueKey).child("email").setValue(userEmail); //this email is signed in email (email that is used for sign in)
+                            dr.child(key).child(uniqueKey).child("applicantName").setValue(applicantName);
+                            dr.child(key).child(uniqueKey).child("applicantContactNumber").setValue(applicantContactNumber);
+                            dr.child(key).child(uniqueKey).child("applicantContactEmail").setValue(applicantEmail);
+                            dr.child(key).child(uniqueKey).child("applicantExperience").setValue(applicantExperience);
+                            dr.child(key).child(uniqueKey).child("applicantLicense").setValue(applicantLicense);
+
+                            Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
+
+                            Intent intent = new Intent(JobDetailsActivity.this, MainActivity.class);
+                            startActivity(intent);
+
+                        }catch (Exception e){
+                            Toast.makeText(JobDetailsActivity.this,"No data saved yet", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+//                //communicating database..sending apply information to database
+//                DatabaseReference dr;
+//                dr = FirebaseDatabase.getInstance().getReference().child("jobApplyRecords");
+//                String uniqueKey = dr.push().getKey();//generating uniqueKey
+//                dr.child(key).child(uniqueKey).child("email").setValue(userEmail);
+//                dr.child(key).child(uniqueKey).child("email").setValue(applicantName);
+//                Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
+//
+//                Intent intent = new Intent(JobDetailsActivity.this, MainActivity.class);
+//                startActivity(intent);
             }
         });
 

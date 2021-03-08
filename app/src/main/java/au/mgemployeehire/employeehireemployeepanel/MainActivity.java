@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         jobAdvButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, JobAdvertisementActivity.class);
+                Intent intent = new Intent(MainActivity.this, JobPositionSelectionActivity.class);
                 startActivity(intent);
             }
         });

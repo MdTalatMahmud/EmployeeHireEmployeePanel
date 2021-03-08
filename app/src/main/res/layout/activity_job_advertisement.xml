@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="#C3F687"
+    android:background="@drawable/signupbackground"
     tools:context=".JobAdvertisementActivity">
 
     <TextView
