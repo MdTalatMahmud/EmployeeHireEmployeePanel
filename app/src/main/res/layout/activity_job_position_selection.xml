@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/signupbackground"
+    tools:context=".JobPositionSelectionActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#00BCD4"
+        android:layout_marginBottom="10dp"
+        android:text="What kind of job you are searching for?"/>
+
+    <RadioGroup
+        android:id="@+id/jobPositionRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/warehouseRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Warehouse"
+            android:onClick="jobPosition"/>
+        <RadioButton
+            android:id="@+id/pickPackerRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Packer"
+            android:onClick="jobPosition"/>
+        <RadioButton
+            android:id="@+id/cleanerRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cleaner"
+            android:onClick="jobPosition"/>
+        <RadioButton
+            android:id="@+id/processWorkerRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Process Worker"
+            android:onClick="jobPosition"/>
+        <RadioButton
+            android:id="@+id/generalLabourRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General Labour"
+            android:onClick="jobPosition"/>
+        <RadioButton
+            android:id="@+id/forkliftDriverRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forklift Driver"
+            android:onClick="jobPosition"/>
+        <RadioButton
+            android:id="@+id/othersJobPositionRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:onClick="jobPosition"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/jobPositionTextID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="text"/>
+    <TextView
+        android:id="@+id/maleFemaleTextID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="text"/>
+
+    <!--        Two buttons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/backJobPositionSelectionPageBtnID"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            app:backgroundTint="#00BCD4" />
+
+        <Button
+            android:id="@+id/JobPositionSelectionNextBtnID"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:layout_marginLeft="5dp"
+            app:backgroundTint="#00BCD4" />
+    </LinearLayout>
+
+</LinearLayout>
