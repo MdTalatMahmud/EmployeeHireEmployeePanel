@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+//import android.se.omapi.Session;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +19,19 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+//import javax.mail.Message;
+//import javax.mail.MessagingException;
+//import javax.mail.PasswordAuthentication;
+////import android.se.omapi.Session;
+//import javax.mail.Transport;
+//import javax.mail.internet.InternetAddress;
+//import javax.mail.internet.MimeMessage;
+//
+////import java.net.PasswordAuthentication;
+//import java.util.Properties;
+//
+//import javax.mail.Session;
 
 public class JobDetailsActivity extends AppCompatActivity {
 
@@ -207,19 +222,23 @@ public class JobDetailsActivity extends AppCompatActivity {
                     }
                 });
 
-//                //communicating database..sending apply information to database
-//                DatabaseReference dr;
-//                dr = FirebaseDatabase.getInstance().getReference().child("jobApplyRecords");
-//                String uniqueKey = dr.push().getKey();//generating uniqueKey
-//                dr.child(key).child(uniqueKey).child("email").setValue(userEmail);
-//                dr.child(key).child(uniqueKey).child("email").setValue(applicantName);
-//                Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
-//
-//                Intent intent = new Intent(JobDetailsActivity.this, MainActivity.class);
-//                startActivity(intent);
+                //sending email function call
+                sendEmail();
             }
         });
 
+
+    }
+
+    //sending email function
+    private void sendEmail(){
+        String mEmail = "freshexport.order@gmail.com";
+        String mSubject = "Someone Applied";
+        String mMessage = "Someone Applied to a job. \n Company Information:\nJob ID is "+keyTextView.getText()+", Company Name: "+companyNameTextView.getText()+
+                ", Contact person name: "+contactPersonNameTextView.getText()+", Contact Person Email: "+contactPersonEmailTextView.getText()+", Contact Phone: "+contactPhoneNumberTextView.getText();
+
+        JavaMailAPI javaMailAPI = new JavaMailAPI(this, mEmail, mSubject, mMessage);
+        javaMailAPI.execute();
 
     }
 }
