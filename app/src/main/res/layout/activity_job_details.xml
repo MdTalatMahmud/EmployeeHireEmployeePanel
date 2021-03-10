@@ -23,6 +23,7 @@
             android:layout_gravity="center_horizontal"
             android:textSize="25dp"
             android:textStyle="bold"
+            android:visibility="gone"
             android:text="Job Details"/>
 
 
@@ -290,6 +291,26 @@
                 android:text="Forklift driver"/>
         </LinearLayout>
 
+        <!--        job type-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Job Type: "/>
+            <TextView
+                android:id="@+id/jobTypeTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Casual"/>
+        </LinearLayout>
+
         <!--     division/section/department-->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -318,6 +339,7 @@
             android:textSize="20dp"
             android:textColor="#00BCD4"
             android:textStyle="bold"
+            android:visibility="gone"
             android:text="Work site Location: (Optional)"/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -326,6 +348,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="Street: "/>
             <TextView
                 android:id="@+id/worksiteStreetTVID"
@@ -333,6 +356,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="street"/>
         </LinearLayout>
         <LinearLayout
@@ -342,6 +366,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="Suburb: "/>
             <TextView
                 android:id="@+id/worksiteSuburbTVID"
@@ -349,6 +374,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="suburb"/>
         </LinearLayout>
         <LinearLayout
@@ -358,6 +384,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="State: "/>
             <TextView
                 android:id="@+id/worksiteStateTVID"
@@ -365,6 +392,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="state"/>
         </LinearLayout>
 
@@ -385,6 +413,7 @@
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="From Date: "/>
             <TextView
                 android:id="@+id/fromDateTVID"
@@ -392,6 +421,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="1/1/2021"/>
         </LinearLayout>
 
@@ -404,6 +434,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="To Date: "/>
             <TextView
                 android:id="@+id/toDateTVID"
@@ -411,6 +442,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="1/1/2021"/>
         </LinearLayout>
 
@@ -496,25 +528,7 @@
                 android:text=""/>
         </LinearLayout>
 
-        <!--        job type-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textColor="#00BCD4"
-                android:textStyle="bold"
-                android:text="Job Type: "/>
-            <TextView
-                android:id="@+id/jobTypeTVID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:text="Casual"/>
-        </LinearLayout>
+
 
         <!--        job description-->
         <TextView
