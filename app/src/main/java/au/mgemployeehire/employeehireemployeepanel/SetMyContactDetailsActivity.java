@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class SetMyContactDetailsActivity extends AppCompatActivity {
 
     private EditText nameEditText, contactNumberEditText, emailEditText, experienceEditText, LicenseEditText;
-    private Button applicantDetailsSaveButton;
+    private Button applicantDetailsSaveButton, backButton;
     private DatabaseReference databaseReference, databaseReference2;
 
     @Override
@@ -38,6 +38,7 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
         experienceEditText = findViewById(R.id.applicantExperienceID);
         LicenseEditText = findViewById(R.id.applicantLicenseID);
         applicantDetailsSaveButton = findViewById(R.id.saveApplicantDetailsBtnID);
+        backButton = findViewById(R.id.backBtnID);
 
         //getting user email UID
         String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -69,6 +70,14 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        //back button functioning
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SetMyContactDetailsActivity.super.onBackPressed();
             }
         });
 
