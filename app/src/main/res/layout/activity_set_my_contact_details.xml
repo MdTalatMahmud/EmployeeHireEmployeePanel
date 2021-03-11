@@ -72,10 +72,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#D6F5FA"
-            android:hint="David Cris"/>
+            android:hint="email@email.com"/>
     </LinearLayout>
 
-    <!--    email-->
+    <!--    Educational qualification-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:text="Educational Qualification: "/>
+        <EditText
+            android:id="@+id/applicantEducationID"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:ems="13"
+            android:inputType="textMultiLine"
+            android:background="#D6F5FA"
+            android:hint="Educational qualification"/>
+    </LinearLayout>
+
+    <!--    Experience-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,7 +112,7 @@
         <EditText
             android:id="@+id/applicantExperienceID"
             android:layout_width="match_parent"
-            android:layout_height="173dp"
+            android:layout_height="70dp"
             android:ems="13"
             android:inputType="textMultiLine"
             android:background="#D6F5FA"
@@ -112,7 +134,7 @@
         <EditText
             android:id="@+id/applicantLicenseID"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="70dp"
             android:ems="13"
             android:inputType="textMultiLine"
             android:background="#D6F5FA"
@@ -129,6 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginRight="5dp"
+        android:backgroundTint="#00BCD4"
         android:text="Back"/>
     <Button
         android:id="@+id/saveApplicantDetailsBtnID"
@@ -136,6 +159,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="5dp"
+        android:backgroundTint="#00BCD4"
         android:text="Save"/>
     </LinearLayout>
 

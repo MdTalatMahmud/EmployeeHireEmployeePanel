@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SetMyContactDetailsActivity extends AppCompatActivity {
 
-    private EditText nameEditText, contactNumberEditText, emailEditText, experienceEditText, LicenseEditText;
+    private EditText nameEditText, contactNumberEditText, emailEditText, educationalQualificationEditText, experienceEditText, LicenseEditText;
     private Button applicantDetailsSaveButton, backButton;
     private DatabaseReference databaseReference, databaseReference2;
 
@@ -35,6 +35,7 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
         nameEditText = findViewById(R.id.staffNameID);
         contactNumberEditText = findViewById(R.id.contactNumberID);
         emailEditText = findViewById(R.id.applicantEmailID);
+        educationalQualificationEditText = findViewById(R.id.applicantEducationID);
         experienceEditText = findViewById(R.id.applicantExperienceID);
         LicenseEditText = findViewById(R.id.applicantLicenseID);
         applicantDetailsSaveButton = findViewById(R.id.saveApplicantDetailsBtnID);
@@ -52,12 +53,14 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
                     String applicantName = snapshot.child("applicantName").getValue().toString();
                     String applicantContactNumber = snapshot.child("applicantContactNumber").getValue().toString();
                     String applicantEmail = snapshot.child("applicantEmail").getValue().toString();
+                    String applicantEducationalQualification = snapshot.child("applicantEducationalQualification").getValue().toString();
                     String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
                     String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
 
                     nameEditText.setText(applicantName);
                     contactNumberEditText.setText(applicantContactNumber);
                     emailEditText.setText(applicantEmail);
+                    educationalQualificationEditText.setText(applicantEducationalQualification);
                     experienceEditText.setText(applicantExperience);
                     LicenseEditText.setText(applicantLicense);
 
@@ -88,13 +91,14 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
                 String applicantName = nameEditText.getText().toString();
                 String applicantContactNumber = contactNumberEditText.getText().toString();
                 String applicantEmail = emailEditText.getText().toString();
+                String applicantEducationalQualification = educationalQualificationEditText.getText().toString();
                 String applicantExperience = experienceEditText.getText().toString();
                 String applicantLicense = LicenseEditText.getText().toString();
 
                 //getting user email UID
                 String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                ApplicantDetails details = new ApplicantDetails(applicantName, applicantContactNumber, applicantEmail, applicantExperience, applicantLicense);
+                ApplicantDetails details = new ApplicantDetails(applicantName, applicantContactNumber, applicantEmail, applicantEducationalQualification, applicantExperience, applicantLicense);
 
                 //setting value to database
                 databaseReference.child(user_id).setValue(details);
