@@ -5,13 +5,15 @@ public class ApplicantDetails {
     String applicantName;
     String applicantContactNumber;
     String applicantEmail;
+    String applicantEducationalQualification;
     String applicantExperience;
     String applicantLicense;
 
-    public ApplicantDetails(String applicantName, String applicantContactNumber, String applicantEmail, String applicantExperience, String applicantLicense) {
+    public ApplicantDetails(String applicantName, String applicantContactNumber, String applicantEmail, String applicantEducationalQualification, String applicantExperience, String applicantLicense) {
         this.applicantName = applicantName;
         this.applicantContactNumber = applicantContactNumber;
         this.applicantEmail = applicantEmail;
+        this.applicantEducationalQualification = applicantEducationalQualification;
         this.applicantExperience = applicantExperience;
         this.applicantLicense = applicantLicense;
     }
@@ -54,5 +56,13 @@ public class ApplicantDetails {
 
     public void setApplicantLicense(String applicantLicense) {
         this.applicantLicense = applicantLicense;
+    }
+
+    public String getApplicantEducationalQualification() {
+        return applicantEducationalQualification;
+    }
+
+    public void setApplicantEducationalQualification(String applicantEducationalQualification) {
+        this.applicantEducationalQualification = applicantEducationalQualification;
     }
 }
