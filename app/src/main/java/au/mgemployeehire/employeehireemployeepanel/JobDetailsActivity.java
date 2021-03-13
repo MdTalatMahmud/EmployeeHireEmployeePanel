@@ -191,6 +191,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                             String applicantName = snapshot.child("applicantName").getValue().toString();
                             String applicantContactNumber = snapshot.child("applicantContactNumber").getValue().toString();
                             String applicantEmail = snapshot.child("applicantEmail").getValue().toString();
+                            String applicantEducationalQualification = snapshot.child("applicantEducationalQualification").getValue().toString();
                             String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
                             String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
 
@@ -202,6 +203,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                             dr.child(key).child(uniqueKey).child("applicantName").setValue(applicantName);
                             dr.child(key).child(uniqueKey).child("applicantContactNumber").setValue(applicantContactNumber);
                             dr.child(key).child(uniqueKey).child("applicantContactEmail").setValue(applicantEmail);
+                            dr.child(key).child(uniqueKey).child("applicantEducationalQualification").setValue(applicantEducationalQualification);
                             dr.child(key).child(uniqueKey).child("applicantExperience").setValue(applicantExperience);
                             dr.child(key).child(uniqueKey).child("applicantLicense").setValue(applicantLicense);
 

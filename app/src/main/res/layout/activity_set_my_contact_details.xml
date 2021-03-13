@@ -1,168 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:padding="15dp"
     tools:context=".SetMyContactDetailsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:text="Set your details here"
-        android:textColor="#2196F3"
-        android:layout_gravity="center_horizontal"/>
-
-<!--    staff name-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#2196F3"
-            android:text="Name: "/>
-        <EditText
-            android:id="@+id/staffNameID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#D6F5FA"
-            android:hint="David Cris"/>
-    </LinearLayout>
-
-<!--    contact number-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#2196F3"
-            android:text="Contact Number: "/>
-        <EditText
-            android:id="@+id/contactNumberID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#D6F5FA"
-            android:hint="David Cris"/>
-    </LinearLayout>
-
-    <!--    email-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#2196F3"
-            android:text="Email: "/>
-        <EditText
-            android:id="@+id/applicantEmailID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#D6F5FA"
-            android:hint="email@email.com"/>
-    </LinearLayout>
-
-    <!--    Educational qualification-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:textStyle="bold"
+            android:text="Set your details here"
             android:textColor="#2196F3"
-            android:text="Educational Qualification: "/>
-        <EditText
-            android:id="@+id/applicantEducationID"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:ems="13"
-            android:inputType="textMultiLine"
-            android:background="#D6F5FA"
-            android:hint="Educational qualification"/>
-    </LinearLayout>
+            android:layout_gravity="center_horizontal"/>
 
-    <!--    Experience-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
+        <!--    staff name-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:text="Name: "/>
+            <EditText
+                android:id="@+id/staffNameID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D6F5FA"
+                android:hint="David Cris"/>
+        </LinearLayout>
+
+        <!--    contact number-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:text="Contact Number: "/>
+            <EditText
+                android:id="@+id/contactNumberID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D6F5FA"
+                android:hint="+000000"/>
+        </LinearLayout>
+
+        <!--    email-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:text="Email: "/>
+            <EditText
+                android:id="@+id/applicantEmailID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D6F5FA"
+                android:hint="email@email.com"/>
+        </LinearLayout>
+
+        <!--    Educational qualification-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:text="Educational Qualification: "/>
+            <EditText
+                android:id="@+id/applicantEducationID"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:ems="13"
+                android:inputType="textMultiLine"
+                android:background="#D6F5FA"
+                android:hint="Educational qualification"/>
+        </LinearLayout>
+
+        <!--    Experience-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:text="Experience: "/>
+            <EditText
+                android:id="@+id/applicantExperienceID"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:ems="13"
+                android:inputType="textMultiLine"
+                android:background="#D6F5FA"
+                android:hint="1 year experience of Forklifting. 2 year experience of Truck driving."/>
+        </LinearLayout>
+
+        <!--    License-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:text="License: "/>
+            <EditText
+                android:id="@+id/applicantLicenseID"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:ems="13"
+                android:inputType="textMultiLine"
+                android:background="#D6F5FA"
+                android:hint="(1) White card, (2)Driving License"/>
+        </LinearLayout>
+
+        <!--    Your Availability-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:text="You set your availability: "/>
+            <TextView
+                android:id="@+id/setAvailabilityTextViewID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="You can set custom availability here if you like"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#2196F3"
-            android:text="Experience: "/>
-        <EditText
-            android:id="@+id/applicantExperienceID"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:ems="13"
-            android:inputType="textMultiLine"
-            android:background="#D6F5FA"
-            android:hint="1 year experience of Forklifting. 2 year experience of Truck driving."/>
-    </LinearLayout>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:text="Select Your Availability: "/>
+            <CheckBox
+                android:id="@+id/AM12_AM6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:00 AM - 6:00 AM"/>
+            <CheckBox
+                android:id="@+id/AM6_PM12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6:00 AM - 12:00 PM"/>
+            <CheckBox
+                android:id="@+id/PM12_PM6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:00 PM - 6:00 PM"/>
+            <CheckBox
+                android:id="@+id/PM6_AM12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6:00 PM - 12:00 AM"/>
+        </LinearLayout>
 
-    <!--    License-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#2196F3"
-            android:text="License: "/>
-        <EditText
-            android:id="@+id/applicantLicenseID"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:ems="13"
-            android:inputType="textMultiLine"
-            android:background="#D6F5FA"
-            android:hint="(1) White card, (2)Driving License"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-    <Button
-        android:id="@+id/backBtnID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginRight="5dp"
-        android:backgroundTint="#00BCD4"
-        android:text="Back"/>
-    <Button
-        android:id="@+id/saveApplicantDetailsBtnID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="5dp"
-        android:backgroundTint="#00BCD4"
-        android:text="Save"/>
+            android:layout_gravity="center_horizontal">
+            <Button
+                android:id="@+id/backBtnID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#00BCD4"
+                android:text="Back"/>
+            <Button
+                android:id="@+id/saveApplicantDetailsBtnID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:backgroundTint="#00BCD4"
+                android:text="Save"/>
+        </LinearLayout>
     </LinearLayout>
 
 
-
-</LinearLayout>
+</ScrollView>
