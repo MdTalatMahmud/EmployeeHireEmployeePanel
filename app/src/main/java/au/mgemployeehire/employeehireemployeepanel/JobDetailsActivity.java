@@ -194,6 +194,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                             String applicantEducationalQualification = snapshot.child("applicantEducationalQualification").getValue().toString();
                             String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
                             String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
+                            String applicantAvailability = snapshot.child("applicantAvailability").getValue().toString();
 
                             //communicating database..sending apply information to database
                             DatabaseReference dr;
@@ -206,6 +207,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                             dr.child(key).child(uniqueKey).child("applicantEducationalQualification").setValue(applicantEducationalQualification);
                             dr.child(key).child(uniqueKey).child("applicantExperience").setValue(applicantExperience);
                             dr.child(key).child(uniqueKey).child("applicantLicense").setValue(applicantLicense);
+                            dr.child(key).child(uniqueKey).child("applicantAvailability").setValue(applicantAvailability);
 
                             Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
 
