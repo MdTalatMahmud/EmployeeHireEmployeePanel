@@ -661,7 +661,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
-                android:text="Environment: "/>
+                android:text="Worksite Temperature: "/>
             <TextView
                 android:id="@+id/temparatureTVID"
                 android:layout_width="wrap_content"

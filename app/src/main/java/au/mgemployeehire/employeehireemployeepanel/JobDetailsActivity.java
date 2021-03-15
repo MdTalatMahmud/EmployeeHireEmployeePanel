@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-//import android.se.omapi.Session;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
@@ -20,18 +19,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-//import javax.mail.Message;
-//import javax.mail.MessagingException;
-//import javax.mail.PasswordAuthentication;
-////import android.se.omapi.Session;
-//import javax.mail.Transport;
-//import javax.mail.internet.InternetAddress;
-//import javax.mail.internet.MimeMessage;
-//
-////import java.net.PasswordAuthentication;
-//import java.util.Properties;
-//
-//import javax.mail.Session;
 
 public class JobDetailsActivity extends AppCompatActivity {
 
@@ -191,19 +178,25 @@ public class JobDetailsActivity extends AppCompatActivity {
                             String applicantName = snapshot.child("applicantName").getValue().toString();
                             String applicantContactNumber = snapshot.child("applicantContactNumber").getValue().toString();
                             String applicantEmail = snapshot.child("applicantEmail").getValue().toString();
+                            String applicantEducationalQualification = snapshot.child("applicantEducationalQualification").getValue().toString();
                             String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
                             String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
+                            String applicantAvailability = snapshot.child("applicantAvailability").getValue().toString();
 
                             //communicating database..sending apply information to database
                             DatabaseReference dr;
                             dr = FirebaseDatabase.getInstance().getReference().child("jobApplyRecords");
-                            String uniqueKey = dr.push().getKey();//generating uniqueKey
-                            dr.child(key).child(uniqueKey).child("email").setValue(userEmail); //this email is signed in email (email that is used for sign in)
-                            dr.child(key).child(uniqueKey).child("applicantName").setValue(applicantName);
-                            dr.child(key).child(uniqueKey).child("applicantContactNumber").setValue(applicantContactNumber);
-                            dr.child(key).child(uniqueKey).child("applicantContactEmail").setValue(applicantEmail);
-                            dr.child(key).child(uniqueKey).child("applicantExperience").setValue(applicantExperience);
-                            dr.child(key).child(uniqueKey).child("applicantLicense").setValue(applicantLicense);
+                            String uniqueKey = dr.push().getKey();//generating uniqueKey, not using anymore
+                            String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();//getting signed in user email unique id
+                            dr.child(key).child(user_id).child("email").setValue(userEmail); //this email is signed in email (email that is used for sign in)
+                            dr.child(key).child(user_id).child("applicantName").setValue(applicantName);
+                            dr.child(key).child(user_id).child("applicantContactNumber").setValue(applicantContactNumber);
+                            dr.child(key).child(user_id).child("applicantContactEmail").setValue(applicantEmail);
+                            dr.child(key).child(user_id).child("applicantEducationalQualification").setValue(applicantEducationalQualification);
+                            dr.child(key).child(user_id).child("applicantExperience").setValue(applicantExperience);
+                            dr.child(key).child(user_id).child("applicantLicense").setValue(applicantLicense);
+                            dr.child(key).child(user_id).child("applicantAvailability").setValue(applicantAvailability);
+                            dr.child(key).child(user_id).child("encryptedEmailID").setValue(user_id);
 
                             Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
 
@@ -211,7 +204,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                             startActivity(intent);
 
                         }catch (Exception e){
-                            Toast.makeText(JobDetailsActivity.this,"No data saved yet", Toast.LENGTH_LONG).show();
+                            Toast.makeText(JobDetailsActivity.this,"Something went wrong. Try again please.", Toast.LENGTH_LONG).show();
                         }
 
                     }
