@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="au.mgemployeehire.employeehireemployeepanel">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,11 @@
         android:roundIcon="@drawable/jobhuntlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeHireEmployeePanel">
-        <activity android:name=".JobPositionSelectionActivity"></activity>
+        <activity android:name=".ExpressAssistantOrAdminSubMenuActivity"></activity>
+        <activity android:name=".ExpressStaffSubMenuActivity" />
+        <activity android:name=".ExpressJobHuntSubMenuActivity" />
+        <activity android:name=".FirstMenuActivity" />
+        <activity android:name=".JobPositionSelectionActivity" />
         <activity android:name=".SetMyContactDetailsActivity" />
         <activity android:name=".SigninActivity">
             <intent-filter>
