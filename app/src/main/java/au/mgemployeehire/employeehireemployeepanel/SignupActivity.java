@@ -75,29 +75,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         String email = signUpEmailEditText.getText().toString().trim();
         String password = signUpPasswordEditText.getText().toString().trim();
 
-//        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
-//            @Override
-//            public void onComplete(@NonNull Task<AuthResult> task) {
-//                String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("applicantEmail").child(user_id);
-//
-//                Map new_post = new HashMap();
-////                new_post.put("companyName",companyName);
-////                new_post.put("companyContactNumber",companyContactNumber);
-////                new_post.put("companyEmail",companyEmail);
-////                new_post.put("companySuburb",companySuburb);
-////                new_post.put("companyStreet",companyStreet);
-////                new_post.put("companyState",companyState);
-////                new_post.put("email",email);
-////                new_post.put("password",password);
-//                current_user_db.setValue(new_post);
-//            }
-//        });
-
-//        currentUserFunction(user_id);
-//        FirebaseUser user = mAuth.getCurrentUser();
-//        currentUserFunction(user);
-
         if (email.isEmpty()){
             signUpEmailEditText.setError("Enter an email address");
             signUpEmailEditText.requestFocus();
@@ -129,7 +106,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
                     Toast.makeText(getApplicationContext(), "Register Successful",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SignupActivity.this, FirstMenuActivity.class);
                     startActivity(intent);
                 } else {
                     // If sign in fails, display a message to the user.
