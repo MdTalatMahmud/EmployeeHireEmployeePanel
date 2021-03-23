@@ -112,7 +112,7 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
                     String applicantEducationalQualification = snapshot.child("applicantEducationalQualification").getValue().toString();
                     String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
                     String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
-                    String availability = snapshot.child("applicantAvailability").getValue().toString();
+                    //String availability = snapshot.child("applicantAvailability").getValue().toString();
 
                     nameEditText.setText(applicantName);
                     contactNumberEditText.setText(applicantContactNumber);
@@ -120,7 +120,7 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
                     educationalQualificationEditText.setText(applicantEducationalQualification);
                     experienceEditText.setText(applicantExperience);
                     LicenseEditText.setText(applicantLicense);
-                    availabilityTextView.setText(availability);
+                    //availabilityTextView.setText(availability);
 
                 }catch (Exception e){
                     Toast.makeText(SetMyContactDetailsActivity.this,"No data saved yet", Toast.LENGTH_LONG).show();
@@ -168,12 +168,12 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
                 String applicantEducationalQualification = educationalQualificationEditText.getText().toString();
                 String applicantExperience = experienceEditText.getText().toString();
                 String applicantLicense = LicenseEditText.getText().toString();
-                String availability = availabilityTextView.getText().toString();
+                //String availability = availabilityTextView.getText().toString();
 
                 //getting user email UID
                 String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                ApplicantDetails details = new ApplicantDetails(applicantName, applicantContactNumber, applicantEmail, applicantEducationalQualification, applicantExperience, applicantLicense, availability);
+                ApplicantDetails details = new ApplicantDetails(applicantName, applicantContactNumber, applicantEmail, applicantEducationalQualification, applicantExperience, applicantLicense);
 
                 //setting value to database
                 databaseReference.child(user_id).setValue(details);
