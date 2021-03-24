@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class SetMyContactDetailsActivity extends AppCompatActivity {
 
     private EditText nameEditText, contactNumberEditText, emailEditText, educationalQualificationEditText, experienceEditText, LicenseEditText;
-    private Button applicantDetailsSaveButton, backButton;
+    private Button applicantDetailsSaveButton;
     private DatabaseReference databaseReference, databaseReference2;
     private CheckBox AM12_AM6_CheckBox, AM6_PM12_CheckBox, PM12_PM6_CheckBox, PM6_AM12_CheckBox;
     private TextView availabilityTextView;
@@ -31,6 +31,9 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_my_contact_details);
+
+        //getting up back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("applicantDetails");
 
@@ -43,7 +46,6 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
         LicenseEditText = findViewById(R.id.applicantLicenseID);
         availabilityTextView = findViewById(R.id.setAvailabilityTextViewID);
         applicantDetailsSaveButton = findViewById(R.id.saveApplicantDetailsBtnID);
-        backButton = findViewById(R.id.backBtnID);
 
         //checkBox ID finding
         AM12_AM6_CheckBox = findViewById(R.id.AM12_AM6);
@@ -112,7 +114,7 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
                     String applicantEducationalQualification = snapshot.child("applicantEducationalQualification").getValue().toString();
                     String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
                     String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
-                    String availability = snapshot.child("applicantAvailability").getValue().toString();
+                    //String availability = snapshot.child("applicantAvailability").getValue().toString();
 
                     nameEditText.setText(applicantName);
                     contactNumberEditText.setText(applicantContactNumber);
@@ -120,7 +122,7 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
                     educationalQualificationEditText.setText(applicantEducationalQualification);
                     experienceEditText.setText(applicantExperience);
                     LicenseEditText.setText(applicantLicense);
-                    availabilityTextView.setText(availability);
+                    //availabilityTextView.setText(availability);
 
                 }catch (Exception e){
                     Toast.makeText(SetMyContactDetailsActivity.this,"No data saved yet", Toast.LENGTH_LONG).show();
@@ -131,14 +133,6 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
-
-        //back button functioning
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SetMyContactDetailsActivity.super.onBackPressed();
             }
         });
 
@@ -168,12 +162,12 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
                 String applicantEducationalQualification = educationalQualificationEditText.getText().toString();
                 String applicantExperience = experienceEditText.getText().toString();
                 String applicantLicense = LicenseEditText.getText().toString();
-                String availability = availabilityTextView.getText().toString();
+                //String availability = availabilityTextView.getText().toString();
 
                 //getting user email UID
                 String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                ApplicantDetails details = new ApplicantDetails(applicantName, applicantContactNumber, applicantEmail, applicantEducationalQualification, applicantExperience, applicantLicense, availability);
+                ApplicantDetails details = new ApplicantDetails(applicantName, applicantContactNumber, applicantEmail, applicantEducationalQualification, applicantExperience, applicantLicense);
 
                 //setting value to database
                 databaseReference.child(user_id).setValue(details);

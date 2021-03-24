@@ -27,9 +27,8 @@ public class JobAdvertisementActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private List<JobAdvertisementData> jobAdvertisementDataList;
     private JobListAdapter jobListAdapter;
-    private FirebaseDatabase mDatabase;
-    private TextView keyTextView;
     public static String jobPosStr;
+    private TextView keyTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +41,7 @@ public class JobAdvertisementActivity extends AppCompatActivity {
             jobPosStr = jobPosition.getString("jobPosition");
         }
 
+        //communicating database
         databaseReference = FirebaseDatabase.getInstance().getReference("JobAdvertisementInfo").child(jobPosStr);
         jobAdvertisementDataList = new ArrayList<>();
 
@@ -50,54 +50,6 @@ public class JobAdvertisementActivity extends AppCompatActivity {
         jobAdvertisementList = findViewById(R.id.jobAdvListID);
         keyTextView = findViewById(R.id.keyTextViewID);
 
-        //getting the id
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                int i = 0;
-//                while (i<1){
-//                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-//                        if ( i==1){
-//                            String a = dataSnapshot.getKey();
-//                            Toast.makeText(JobAdvertisementActivity.this,""+a, Toast.LENGTH_SHORT).show();
-//                            break;
-//                        }
-//
-//                    }
-//
-//                }
-//                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-////                        i++;
-////                        if (i==2){
-////                            String a = dataSnapshot.getKey();
-////                            Toast.makeText(JobAdvertisementActivity.this,""+a, Toast.LENGTH_SHORT).show();
-////                            break;
-////                        }
-////                        for (i=0; i<2; i++){
-////                            String a = dataSnapshot.getKey();
-////                            Toast.makeText(JobAdvertisementActivity.this,""+a, Toast.LENGTH_SHORT).show();
-////                        }
-//
-//
-//                    }
-//
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-        //passing data to another activity from list
-//        jobAdvertisementList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                //Toast.makeText(JobAdvertisementActivity.this,""+viewStr, Toast.LENGTH_SHORT).show();
-////                Intent intent = new Intent(JobAdvertisementActivity.this, JobDetailsActivity.class);
-////                startActivity(intent);
-//            }
-//        });
     }
 
     @Override
@@ -109,8 +61,6 @@ public class JobAdvertisementActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
                     JobAdvertisementData jobAdvertisementData = dataSnapshot1.getValue(JobAdvertisementData.class);
                     jobAdvertisementDataList.add(jobAdvertisementData);
-
-                    //Toast.makeText(JobAdvertisementActivity.this,""+dataSnapshot1.getKey(), Toast.LENGTH_SHORT).show();
                 }
                 jobAdvertisementList.setAdapter(jobListAdapter);
             }

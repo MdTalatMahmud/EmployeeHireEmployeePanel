@@ -8,16 +8,14 @@ public class ApplicantDetails {
     String applicantEducationalQualification;
     String applicantExperience;
     String applicantLicense;
-    String applicantAvailability;
 
-    public ApplicantDetails(String applicantName, String applicantContactNumber, String applicantEmail, String applicantEducationalQualification, String applicantExperience, String applicantLicense, String applicantAvailability) {
+    public ApplicantDetails(String applicantName, String applicantContactNumber, String applicantEmail, String applicantEducationalQualification, String applicantExperience, String applicantLicense) {
         this.applicantName = applicantName;
         this.applicantContactNumber = applicantContactNumber;
         this.applicantEmail = applicantEmail;
         this.applicantEducationalQualification = applicantEducationalQualification;
         this.applicantExperience = applicantExperience;
         this.applicantLicense = applicantLicense;
-        this.applicantAvailability = applicantAvailability;
     }
 
     public String getApplicantName() {
@@ -66,13 +64,5 @@ public class ApplicantDetails {
 
     public void setApplicantEducationalQualification(String applicantEducationalQualification) {
         this.applicantEducationalQualification = applicantEducationalQualification;
-    }
-
-    public String getApplicantAvailability() {
-        return applicantAvailability;
-    }
-
-    public void setApplicantAvailability(String applicantAvailability) {
-        this.applicantAvailability = applicantAvailability;
     }
 }

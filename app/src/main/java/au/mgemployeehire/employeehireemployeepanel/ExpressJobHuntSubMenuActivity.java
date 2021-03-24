@@ -39,7 +39,8 @@ public class ExpressJobHuntSubMenuActivity extends AppCompatActivity {
         appliedJobsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ExpressJobHuntSubMenuActivity.this, AppliedJobsActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -22,13 +22,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class JobDetailsActivity extends AppCompatActivity {
 
-    private TextView keyTextView;
+    private TextView jobAdvTextView;
     private TextView companyNameTextView, companyStreetTextView, companySuburbTextView, companyStateTextView, awardTextView, contactPersonNameTextView,
             contactPersonEmailTextView, contactPhoneNumberTextView, supervisorNameTextView, supervisorMobileNumberTextView, workingDivisionTextView,
             workStreetTextView, workSuburbTextView, workStateTextView, fromDateTextView, toDateTextView, fromTimeTextView, toTimeTextView, genderTextView,
             jobPositionTextView, workerQuantityTextView, jobTypeTextView, jobDescriptionTextView, ppeRequirementTextView, transportRequirementTextView,
-            englishRequirementsTextView, liftingCapacityTextView, environmentTextView, licenseRequirementTextView;
-    private Button applybutton, backButton;
+            englishRequirementsTextView, liftingCapacityTextView, environmentTextView, licenseRequirementTextView, additionalRequirementTextView;
+    private Button applyButton, backButton;
     private DatabaseReference databaseReference;
 
 
@@ -38,7 +38,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_job_details);
 
         //id finding
-        keyTextView = findViewById(R.id.keyTExtID);
+        jobAdvTextView = findViewById(R.id.jobAdvID);
 
         companyNameTextView = findViewById(R.id.conpanyNameTVID);
         companyStreetTextView = findViewById(R.id.streetTVID);
@@ -69,12 +69,13 @@ public class JobDetailsActivity extends AppCompatActivity {
         liftingCapacityTextView = findViewById(R.id.liftingCapacityTVID);
         environmentTextView = findViewById(R.id.temparatureTVID);
         licenseRequirementTextView = findViewById(R.id.licenseRequiredTVID);
+        additionalRequirementTextView = findViewById(R.id.additionalRequirementTVID);
 
-        applybutton = findViewById(R.id.jobApplyBtnID);
+        applyButton = findViewById(R.id.jobApplyBtnID);
         backButton = findViewById(R.id.backBtnID);
 
-        keyTextView.setText(AppConstant.keyStr);
-        String key = keyTextView.getText().toString();
+        jobAdvTextView.setText(AppConstant.keyStr);
+        String key = jobAdvTextView.getText().toString();
 
         //getting data from database
         databaseReference = FirebaseDatabase.getInstance().getReference().child("JobAdvertisementInfo").child(JobAdvertisementActivity.jobPosStr).child(key);
@@ -111,6 +112,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                 String liftingCapacity = snapshot.child("liftingCapacityStr").getValue().toString();
                 String environment = snapshot.child("environmentStr").getValue().toString();
                 String licenseRequirement = snapshot.child("licenseRequiredStr").getValue().toString();
+                String additionalRequirement = snapshot.child("additionalRequirementStr").getValue().toString();
 
                 //setting data to textView
                 companyNameTextView.setText(companyName);
@@ -142,7 +144,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                 liftingCapacityTextView.setText(liftingCapacity);
                 environmentTextView.setText(environment);
                 licenseRequirementTextView.setText(licenseRequirement);
-
+                additionalRequirementTextView.setText(additionalRequirement);
             }
 
             @Override
@@ -159,7 +161,7 @@ public class JobDetailsActivity extends AppCompatActivity {
             }
         });
 
-        applybutton.setOnClickListener(new View.OnClickListener() {
+        applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //finding email that is used for sign in
@@ -181,12 +183,12 @@ public class JobDetailsActivity extends AppCompatActivity {
                             String applicantEducationalQualification = snapshot.child("applicantEducationalQualification").getValue().toString();
                             String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
                             String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
-                            String applicantAvailability = snapshot.child("applicantAvailability").getValue().toString();
+                            //String applicantAvailability = snapshot.child("applicantAvailability").getValue().toString();
 
                             //communicating database..sending apply information to database
                             DatabaseReference dr;
                             dr = FirebaseDatabase.getInstance().getReference().child("jobApplyRecords");
-                            String uniqueKey = dr.push().getKey();//generating uniqueKey, not using anymore
+                            //String uniqueKey = dr.push().getKey();//generating uniqueKey, not using anymore
                             String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();//getting signed in user email unique id
                             dr.child(key).child(user_id).child("email").setValue(userEmail); //this email is signed in email (email that is used for sign in)
                             dr.child(key).child(user_id).child("applicantName").setValue(applicantName);
@@ -195,17 +197,59 @@ public class JobDetailsActivity extends AppCompatActivity {
                             dr.child(key).child(user_id).child("applicantEducationalQualification").setValue(applicantEducationalQualification);
                             dr.child(key).child(user_id).child("applicantExperience").setValue(applicantExperience);
                             dr.child(key).child(user_id).child("applicantLicense").setValue(applicantLicense);
-                            dr.child(key).child(user_id).child("applicantAvailability").setValue(applicantAvailability);
+                            //dr.child(key).child(user_id).child("applicantAvailability").setValue(applicantAvailability);
                             dr.child(key).child(user_id).child("encryptedEmailID").setValue(user_id);
 
+                            //sending job advertisement info under user_id to the database
+                            DatabaseReference databaseReference1;
+                            databaseReference1 = FirebaseDatabase.getInstance().getReference().child("appliedJobId");
+
+                            databaseReference1.child(user_id).child(key).child("companyNameStr").setValue(companyNameTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("streetStr").setValue(companyStreetTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("suburbStr").setValue(companySuburbTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("stateStr").setValue(companyStateTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("awardStr").setValue(awardTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("yourNameStr").setValue(contactPersonNameTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("emailStr").setValue(contactPersonEmailTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("phoneStr").setValue(contactPhoneNumberTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("nameOfThePersonStr").setValue(supervisorNameTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("supervisorMobileNumberStr").setValue(supervisorMobileNumberTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("workingDivisionStr").setValue(workingDivisionTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("workSiteStreetStr").setValue(workStreetTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("workSiteSuburbStr").setValue(workSuburbTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("workSiteStateStr").setValue(workStateTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("fromDateStr").setValue(fromDateTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("toDateStr").setValue(toDateTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("startTimeStr").setValue(fromTimeTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("endTimeStr").setValue(toTimeTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("maleFemaleStr").setValue(genderTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("jobPositionStr").setValue(jobPositionTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("workerQuantityStr").setValue(workerQuantityTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("jobTypeStr").setValue(jobTypeTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("jobDescriptionStr").setValue(jobDescriptionTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("ppeStr").setValue(ppeRequirementTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("transportRequirementsStr").setValue(transportRequirementTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("engRequirementStr").setValue(englishRequirementsTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("liftingCapacityStr").setValue(liftingCapacityTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("environmentStr").setValue(environmentTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("licenseRequiredStr").setValue(licenseRequirementTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("additionalRequirementStr").setValue(additionalRequirementTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("keyStr").setValue(key);
+
+                            //show job apply confirmation message with a toast
                             Toast.makeText(getApplicationContext(), "Congratulation! Successfully Applied",Toast.LENGTH_LONG).show();
 
+                            //back to MainActivity.class
                             Intent intent = new Intent(JobDetailsActivity.this, MainActivity.class);
                             startActivity(intent);
 
                         }catch (Exception e){
                             Toast.makeText(JobDetailsActivity.this,"Something went wrong. Try again please.", Toast.LENGTH_LONG).show();
                         }
+
+                        //
+                        //DatabaseReference databaseReference3 = FirebaseDatabase.getInstance().getReference();
+                        
 
                     }
 
@@ -227,7 +271,7 @@ public class JobDetailsActivity extends AppCompatActivity {
     private void sendEmail(){
         String mEmail = "freshexport.order@gmail.com";
         String mSubject = "Someone Applied";
-        String mMessage = "Someone Applied to a job. \n Company Information:\nJob ID is "+keyTextView.getText()+", Company Name: "+companyNameTextView.getText()+
+        String mMessage = "Someone Applied to a job. \n Company Information:\nJob ID is "+jobAdvTextView.getText()+", Company Name: "+companyNameTextView.getText()+
                 ", Contact person name: "+contactPersonNameTextView.getText()+", Contact Person Email: "+contactPersonEmailTextView.getText()+", Contact Phone: "+contactPhoneNumberTextView.getText();
 
         JavaMailAPI javaMailAPI = new JavaMailAPI(this, mEmail, mSubject, mMessage);
