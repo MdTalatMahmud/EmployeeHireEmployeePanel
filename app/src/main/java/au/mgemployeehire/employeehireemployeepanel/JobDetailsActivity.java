@@ -27,7 +27,7 @@ public class JobDetailsActivity extends AppCompatActivity {
             contactPersonEmailTextView, contactPhoneNumberTextView, supervisorNameTextView, supervisorMobileNumberTextView, workingDivisionTextView,
             workStreetTextView, workSuburbTextView, workStateTextView, fromDateTextView, toDateTextView, fromTimeTextView, toTimeTextView, genderTextView,
             jobPositionTextView, workerQuantityTextView, jobTypeTextView, jobDescriptionTextView, ppeRequirementTextView, transportRequirementTextView,
-            englishRequirementsTextView, liftingCapacityTextView, environmentTextView, licenseRequirementTextView;
+            englishRequirementsTextView, liftingCapacityTextView, environmentTextView, licenseRequirementTextView, additionalRequirementTextView;
     private Button applyButton, backButton;
     private DatabaseReference databaseReference;
 
@@ -69,6 +69,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         liftingCapacityTextView = findViewById(R.id.liftingCapacityTVID);
         environmentTextView = findViewById(R.id.temparatureTVID);
         licenseRequirementTextView = findViewById(R.id.licenseRequiredTVID);
+        additionalRequirementTextView = findViewById(R.id.additionalRequirementTVID);
 
         applyButton = findViewById(R.id.jobApplyBtnID);
         backButton = findViewById(R.id.backBtnID);
@@ -111,6 +112,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                 String liftingCapacity = snapshot.child("liftingCapacityStr").getValue().toString();
                 String environment = snapshot.child("environmentStr").getValue().toString();
                 String licenseRequirement = snapshot.child("licenseRequiredStr").getValue().toString();
+                String additionalRequirement = snapshot.child("additionalRequirementStr").getValue().toString();
 
                 //setting data to textView
                 companyNameTextView.setText(companyName);
@@ -142,7 +144,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                 liftingCapacityTextView.setText(liftingCapacity);
                 environmentTextView.setText(environment);
                 licenseRequirementTextView.setText(licenseRequirement);
-
+                additionalRequirementTextView.setText(additionalRequirement);
             }
 
             @Override
@@ -181,7 +183,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                             String applicantEducationalQualification = snapshot.child("applicantEducationalQualification").getValue().toString();
                             String applicantExperience = snapshot.child("applicantExperience").getValue().toString();
                             String applicantLicense = snapshot.child("applicantLicense").getValue().toString();
-                            String applicantAvailability = snapshot.child("applicantAvailability").getValue().toString();
+                            //String applicantAvailability = snapshot.child("applicantAvailability").getValue().toString();
 
                             //communicating database..sending apply information to database
                             DatabaseReference dr;
@@ -195,14 +197,13 @@ public class JobDetailsActivity extends AppCompatActivity {
                             dr.child(key).child(user_id).child("applicantEducationalQualification").setValue(applicantEducationalQualification);
                             dr.child(key).child(user_id).child("applicantExperience").setValue(applicantExperience);
                             dr.child(key).child(user_id).child("applicantLicense").setValue(applicantLicense);
-                            dr.child(key).child(user_id).child("applicantAvailability").setValue(applicantAvailability);
+                            //dr.child(key).child(user_id).child("applicantAvailability").setValue(applicantAvailability);
                             dr.child(key).child(user_id).child("encryptedEmailID").setValue(user_id);
 
                             //sending job advertisement info under user_id to the database
                             DatabaseReference databaseReference1;
                             databaseReference1 = FirebaseDatabase.getInstance().getReference().child("appliedJobId");
 
-                            //databaseReference1.child(user_id).child(key).setValue(key);
                             databaseReference1.child(user_id).child(key).child("companyNameStr").setValue(companyNameTextView.getText());
                             databaseReference1.child(user_id).child(key).child("streetStr").setValue(companyStreetTextView.getText());
                             databaseReference1.child(user_id).child(key).child("suburbStr").setValue(companySuburbTextView.getText());
@@ -232,6 +233,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                             databaseReference1.child(user_id).child(key).child("liftingCapacityStr").setValue(liftingCapacityTextView.getText());
                             databaseReference1.child(user_id).child(key).child("environmentStr").setValue(environmentTextView.getText());
                             databaseReference1.child(user_id).child(key).child("licenseRequiredStr").setValue(licenseRequirementTextView.getText());
+                            databaseReference1.child(user_id).child(key).child("additionalRequirementStr").setValue(additionalRequirementTextView.getText());
                             databaseReference1.child(user_id).child(key).child("keyStr").setValue(key);
 
                             //show job apply confirmation message with a toast

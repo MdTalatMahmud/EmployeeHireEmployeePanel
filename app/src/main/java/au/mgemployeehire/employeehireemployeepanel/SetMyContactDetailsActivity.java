@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class SetMyContactDetailsActivity extends AppCompatActivity {
 
     private EditText nameEditText, contactNumberEditText, emailEditText, educationalQualificationEditText, experienceEditText, LicenseEditText;
-    private Button applicantDetailsSaveButton, backButton;
+    private Button applicantDetailsSaveButton;
     private DatabaseReference databaseReference, databaseReference2;
     private CheckBox AM12_AM6_CheckBox, AM6_PM12_CheckBox, PM12_PM6_CheckBox, PM6_AM12_CheckBox;
     private TextView availabilityTextView;
@@ -31,6 +31,9 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_my_contact_details);
+
+        //getting up back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("applicantDetails");
 
@@ -43,7 +46,6 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
         LicenseEditText = findViewById(R.id.applicantLicenseID);
         availabilityTextView = findViewById(R.id.setAvailabilityTextViewID);
         applicantDetailsSaveButton = findViewById(R.id.saveApplicantDetailsBtnID);
-        backButton = findViewById(R.id.backBtnID);
 
         //checkBox ID finding
         AM12_AM6_CheckBox = findViewById(R.id.AM12_AM6);
@@ -131,14 +133,6 @@ public class SetMyContactDetailsActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
-
-        //back button functioning
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SetMyContactDetailsActivity.super.onBackPressed();
             }
         });
 

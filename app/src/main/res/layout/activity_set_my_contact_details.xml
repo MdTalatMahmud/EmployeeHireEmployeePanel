@@ -207,14 +207,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal">
-            <Button
-                android:id="@+id/backBtnID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginRight="5dp"
-                android:backgroundTint="#00BCD4"
-                android:text="Back"/>
+
             <Button
                 android:id="@+id/saveApplicantDetailsBtnID"
                 android:layout_width="wrap_content"

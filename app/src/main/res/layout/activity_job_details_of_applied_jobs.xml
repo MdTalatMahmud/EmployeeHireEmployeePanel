@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".JobDetailsActivity">
+    tools:context=".JobDetailsOfAppliedJobsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -283,7 +283,7 @@
                 android:textStyle="bold"
                 android:text="Job position: "/>
             <TextView
-                android:id="@+id/jobPositionTVID"
+                android:id="@+id/jobPositionTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -303,7 +303,7 @@
                 android:textStyle="bold"
                 android:text="Job Type: "/>
             <TextView
-                android:id="@+id/jobTypeTVID"
+                android:id="@+id/jobTypeTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -324,7 +324,7 @@
                 android:textStyle="bold"
                 android:text="Department/Section/Shed: "/>
             <TextView
-                android:id="@+id/departmentTVID"
+                android:id="@+id/departmentTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -458,7 +458,7 @@
                 android:textStyle="bold"
                 android:text="Start Time: "/>
             <TextView
-                android:id="@+id/fromTimeTVID"
+                android:id="@+id/fromTimeTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -477,7 +477,7 @@
                 android:textStyle="bold"
                 android:text="End Time: "/>
             <TextView
-                android:id="@+id/toTimeTVID"
+                android:id="@+id/toTimeTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -498,7 +498,7 @@
                 android:textStyle="bold"
                 android:text="Male/Female: "/>
             <TextView
-                android:id="@+id/maleFemaleTVID"
+                android:id="@+id/maleFemaleTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -520,7 +520,7 @@
                 android:textStyle="bold"
                 android:text="Number of Staff: "/>
             <TextView
-                android:id="@+id/numberOfStaffTVID"
+                android:id="@+id/numberOfStaffTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -539,7 +539,7 @@
             android:textStyle="bold"
             android:text="Job Description: "/>
         <TextView
-            android:id="@+id/jobDescriptionTVID"
+            android:id="@+id/jobDescriptionTVID2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -559,7 +559,7 @@
                 android:textStyle="bold"
                 android:text="PPE Requirements: "/>
             <TextView
-                android:id="@+id/ppeRequirementsTVID"
+                android:id="@+id/ppeRequirementsTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -580,7 +580,7 @@
                 android:textStyle="bold"
                 android:text="Transport requirements: "/>
             <TextView
-                android:id="@+id/transportRequirementsTVID"
+                android:id="@+id/transportRequirementsTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -601,7 +601,7 @@
                 android:textStyle="bold"
                 android:text="English requirements: "/>
             <TextView
-                android:id="@+id/engRequirementTVID"
+                android:id="@+id/engRequirementTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -621,7 +621,7 @@
                 android:textStyle="bold"
                 android:text="Lifting capacity: "/>
             <TextView
-                android:id="@+id/liftingCapacityTVID"
+                android:id="@+id/liftingCapacityTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -642,7 +642,7 @@
                 android:textStyle="bold"
                 android:text="Additional requirements: "/>
             <TextView
-                android:id="@+id/additionalRequirementTVID"
+                android:id="@+id/additionalRequirementTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -663,7 +663,7 @@
                 android:textStyle="bold"
                 android:text="Worksite Temperature: "/>
             <TextView
-                android:id="@+id/temparatureTVID"
+                android:id="@+id/temperatureTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -684,44 +684,21 @@
                 android:textStyle="bold"
                 android:text="License required: "/>
             <TextView
-                android:id="@+id/licenseRequiredTVID"
+                android:id="@+id/licenseRequiredTVID2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:text="N/A"/>
-        </LinearLayout>
-
-
-
-        <!--        Two buttons-->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/backBtnID"
-                android:layout_width="120dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Back"
-                app:backgroundTint="#00BCD4" />
-
-            <Button
-                android:id="@+id/jobApplyBtnID"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="Apply"
-                android:layout_marginLeft="5dp"
-                app:backgroundTint="#00BCD4" />
+                android:text=""
+                android:visibility="invisible"/>
         </LinearLayout>
-
 
     </LinearLayout>
+
 
 
 </ScrollView>
