@@ -15,7 +15,8 @@
         <activity android:name=".JobDetailsOfAppliedJobsActivity"
             android:parentActivityName=".AppliedJobsActivity"></activity>
         <activity android:name=".ExpressAssistantOrAdminSubMenuActivity" />
-        <activity android:name=".ExpressStaffSubMenuActivity" />
+        <activity android:name=".ExpressStaffSubMenuActivity"
+            android:parentActivityName=".FirstMenuActivity"></activity>
         <activity android:name=".ExpressJobHuntSubMenuActivity"
             android:parentActivityName=".FirstMenuActivity"></activity>
         <activity android:name=".FirstMenuActivity" />
