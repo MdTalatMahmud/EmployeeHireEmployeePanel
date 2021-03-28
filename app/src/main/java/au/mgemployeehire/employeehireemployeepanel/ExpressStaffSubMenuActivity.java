@@ -10,5 +10,8 @@ public class ExpressStaffSubMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_express_staff_sub_menu);
+
+        //getting up back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

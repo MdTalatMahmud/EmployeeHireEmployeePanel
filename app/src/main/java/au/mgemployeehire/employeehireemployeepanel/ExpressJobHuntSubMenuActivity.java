@@ -16,10 +16,12 @@ public class ExpressJobHuntSubMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_express_job_hunt_sub_menu);
 
+        //finding id
         jobAdvertisementsButton = findViewById(R.id.jobAdvertisementsButtonID);
         appliedJobsButton = findViewById(R.id.appliedJobsButtonID);
         setContactDetailsButton = findViewById(R.id.setContactDetailsButtonID);
 
+        //button functioning
         setContactDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
