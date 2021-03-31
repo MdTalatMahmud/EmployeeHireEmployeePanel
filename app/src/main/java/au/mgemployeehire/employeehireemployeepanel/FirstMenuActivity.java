@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class FirstMenuActivity extends AppCompatActivity {
 
-    private Button expressJobHuntButton, expressStaffButton, expressAssistantOrAdminButton;
+    private Button expressJobHuntButton, expressStaffButton, expressAssistantOrAdminButton, chatButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class FirstMenuActivity extends AppCompatActivity {
         expressJobHuntButton = findViewById(R.id.expressJobHuntButtonID);
         expressStaffButton = findViewById(R.id.expressStaffButtonID);
         expressAssistantOrAdminButton = findViewById(R.id.expressAssistantOrAdminButtonID);
+        chatButton = findViewById(R.id.chatButtonID);
 
         expressJobHuntButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,14 @@ public class FirstMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FirstMenuActivity.this, ExpressAssistantOrAdminSubMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstMenuActivity.this, ChatActivity.class);
                 startActivity(intent);
             }
         });

@@ -12,17 +12,23 @@
         android:roundIcon="@drawable/jobhuntlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeHireEmployeePanel">
-        <activity android:name=".JobDetailsOfAppliedJobsActivity"
-            android:parentActivityName=".AppliedJobsActivity"></activity>
+        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity
+            android:name=".JobDetailsOfAppliedJobsActivity"
+            android:parentActivityName=".AppliedJobsActivity" />
         <activity android:name=".ExpressAssistantOrAdminSubMenuActivity" />
-        <activity android:name=".ExpressStaffSubMenuActivity"
-            android:parentActivityName=".FirstMenuActivity"></activity>
-        <activity android:name=".ExpressJobHuntSubMenuActivity"
-            android:parentActivityName=".FirstMenuActivity"></activity>
+        <activity
+            android:name=".ExpressStaffSubMenuActivity"
+            android:parentActivityName=".FirstMenuActivity" />
+        <activity
+            android:name=".ExpressJobHuntSubMenuActivity"
+            android:parentActivityName=".FirstMenuActivity" />
         <activity android:name=".FirstMenuActivity" />
         <activity android:name=".JobPositionSelectionActivity" />
-        <activity android:name=".SetMyContactDetailsActivity"
-            android:parentActivityName=".ExpressJobHuntSubMenuActivity"></activity>
+        <activity
+            android:name=".SetMyContactDetailsActivity"
+            android:parentActivityName=".ExpressJobHuntSubMenuActivity" />
         <activity android:name=".SigninActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,8 +50,9 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".JobDetailsActivity" />
-        <activity android:name=".AppliedJobsActivity"
-            android:parentActivityName=".ExpressJobHuntSubMenuActivity"></activity>
+        <activity
+            android:name=".AppliedJobsActivity"
+            android:parentActivityName=".ExpressJobHuntSubMenuActivity" />
         <activity android:name=".JobAdvertisementActivity" />
         <activity android:name=".MainActivity">
 
